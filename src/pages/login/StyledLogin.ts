@@ -34,7 +34,7 @@ const StInputContainer = styled.div`
 const StInput = styled.input`
   border: 1px solid white;
   border-radius: 4px;
-  width: 300px;
+  width: 630px;
   height: 30px;
 `
 
@@ -50,7 +50,7 @@ const StLoginButton = styled.button`
 border: 1px solid #B0C4DE;
   margin-left:50px;
   border-radius: 4px;
-  width: 306px;
+  width: 636px;
   height: 35px;
   margin-top:36px;
   background-color:#B0C4DE
