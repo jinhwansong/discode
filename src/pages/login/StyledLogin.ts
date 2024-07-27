@@ -12,54 +12,15 @@ const StAppContainer = styled.div`
   background-position: center;
 `
 
-const StMainContainer = styled.div`
-  border: 1px solid #444444;
-  border-radius: 8px;
-  width: 750px;
-  height: 400px;
-  background-color:#444444
-`
-
 const StWelcomeMsg = styled.div`
   margin-bottom:20px;
   color: white;
   text-align: center
 `
 
-const StInputContainer = styled.div`
-  margin-left : 50px;
-
-`
-
-const StInput = styled.input`
-  border: 1px solid white;
-  border-radius: 4px;
-  width: 630px;
-  height: 30px;
-`
-
-const StIdPwMsg = styled.p`
-  color:white;
-  font-size:13px;
-  font-weight: bold;
-  display:flex;
-  margin:0px
-`
-
-const StLoginButton = styled.button`
-border: 1px solid #B0C4DE;
-  margin-left:50px;
-  border-radius: 4px;
-  width: 636px;
-  height: 35px;
-  margin-top:36px;
-  background-color:#B0C4DE
-`
-
 const StLinkSignUp = styled.p`
   color:white;
   font-size:12px;
-  margin-left:50px;
 `
 
 const StLink = styled(Link)`
@@ -67,8 +28,4 @@ const StLink = styled(Link)`
   text-decoration-line: none;
 `
 
-const StStar = styled.p`
-  color:red;
-`
-
-export { StAppContainer, StMainContainer, StWelcomeMsg, StInputContainer, StInput, StIdPwMsg, StLoginButton, StLinkSignUp, StLink, StStar }
+export { StAppContainer, StWelcomeMsg, StLinkSignUp, StLink }
