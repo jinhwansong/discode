@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import envCompatible from "vite-plugin-env-compatible";
-import tsconfigPaths from "vite-tsconfig-paths";
-import checker from "vite-plugin-checker";
-import svgr from "vite-plugin-svgr";
-import viteImagemin from "vite-plugin-imagemin";
-
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import envCompatible from 'vite-plugin-env-compatible';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import checker from 'vite-plugin-checker';
+import svgr from 'vite-plugin-svgr';
+import viteImagemin from 'vite-plugin-imagemin';
+import path from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
@@ -19,14 +19,14 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          let extType = assetInfo.name?.split(".").at(1);
+          let extType = assetInfo.name?.split('.').at(1);
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType as string)) {
-            extType = "img";
+            extType = 'img';
           }
-          return `assets/${extType}/[name]-[hash][extname]`;
+          return `${extType}/[name]-[hash][extname]`;
         },
-        chunkFileNames: "assets/js/[name]-[hash].js",
-        entryFileNames: "assets/js/[name]-[hash].js",
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js',
       },
     },
     terserOptions: {
@@ -37,6 +37,8 @@ export default defineConfig({
     },
   },
   plugins: [
+    // svg를 컴포넌트 처럼 사용하게 해줌
+    svgr(),
     react(),
     // svg이외의 이미지 파일 최적화
     viteImagemin({
@@ -57,20 +59,18 @@ export default defineConfig({
       svgo: {
         plugins: [
           {
-            name: "removeViewBox",
+            name: 'removeViewBox',
           },
           {
-            name: "removeEmptyAttrs",
+            name: 'removeEmptyAttrs',
             active: false,
           },
         ],
       },
     }),
 
-    // svg를 컴포넌트 처럼 사용하게 해줌
-    svgr(),
     // 환경변수를 import.meta.env 에서 process.env로 바꿔줌
-    envCompatible({ prefix: "REACT_APP" }),
+    envCompatible({ prefix: 'REACT_APP' }),
     // tsconfig.json에 정의된 paths 매핑사용
     tsconfigPaths(),
 
@@ -78,7 +78,23 @@ export default defineConfig({
       // 타입스크립트 타입 검사
       typescript: true,
       // eslint 검사
-      eslint: { lintCommand: "eslint ./src --ext .ts,.tsx" },
+      eslint: { lintCommand: 'eslint ./src --ext .ts,.tsx' },
     }),
   ],
+  resolve: {
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: '@pages', replacement: path.resolve(__dirname, 'src/pages') },
+      {
+        find: '@components',
+        replacement: path.resolve(__dirname, 'src/components'),
+      },
+      { find: '@assets', replacement: path.resolve(__dirname, 'src/assets') },
+      { find: '@hooks', replacement: path.resolve(__dirname, 'src/hooks') },
+      { find: '@stores', replacement: path.resolve(__dirname, 'src/stores') },
+      { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
+      { find: '@types', replacement: path.resolve(__dirname, 'src/types') },
+      { find: '@utils', replacement: path.resolve(__dirname, 'src/utils') },
+    ],
+  },
 });

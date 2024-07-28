@@ -1,9 +1,3 @@
-import React from 'react'
+const Register = () => <div>Register</div>;
 
-function Register() {
-  return (
-    <div>Register</div>
-  )
-}
-
-export default Register
+export default Register;
