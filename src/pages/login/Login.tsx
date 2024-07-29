@@ -44,7 +44,7 @@ const Login = () => {
           <Button type="submit">로그인</Button>
         </form>
         <StLinkSignUp>
-          계정이 필요한가요? <StLink to="/register">가입하기!</StLink>
+          계정이 필요한가요? <StLink to="/service/friend">가입하기!</StLink>
         </StLinkSignUp>
       </StMainContainer>
     </StAppContainer>
