@@ -77,6 +77,7 @@ module.exports = {
     "prefer-destructuring":"off",
     "no-else-return": "off",
     "no-param-reassign": "off",
+    "@typescript-eslint/no-use-before-define" : "off",
     'import/extensions': [
       'off',
     ],
