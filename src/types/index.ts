@@ -1,5 +1,7 @@
 export interface IuseCheck {
-  server_id: number;
+  id: number;
   name: string;
-  profile:string;
+  profileImage: string;
+  user_state: string;
+  created_at: string;
 }

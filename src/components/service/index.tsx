@@ -57,15 +57,15 @@ const Service = () => {
         </St.DmTitle>
         <St.Nav>
           {friend.map((dms, i) => (
-            <St.Dmlist key={i} $active={param.id === String(dms.server_id)}>
-              <Link to={`/service/dm/${dms.server_id}`} state={{ user: dms }}>
+            <St.Dmlist key={i} $active={param.id === String(dms.id)}>
+              <Link to={`/service/dm/${dms.id}`} state={{ user: dms }}>
                 <DmImg
-                  id={dms.server_id}
-                  profile={dms.profile}
+                  profile={dms.profileImage}
                   name={dms.name}
+                  online={dms.user_state}
                 />
 
-                {dms.name}
+                <p>{dms.name}</p>
               </Link>
               <button onClick={onDmListDelete}>
                 <IcClosepop />

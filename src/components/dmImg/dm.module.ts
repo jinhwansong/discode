@@ -8,7 +8,7 @@ export const DmImgWrap = styled.span<{ $active: boolean }>`
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid
-    ${(props) => props.$active ? props.theme.mainColor : props.theme.placeholder};
+    ${(props) => props.$active ? props.theme.mainColor : props.theme.grey};
   margin-right: 0.8rem;
   > img {
     object-fit: cover;

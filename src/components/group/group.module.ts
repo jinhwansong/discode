@@ -7,6 +7,7 @@ export const SeletFreind = styled.div`
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 4.6px;
   position: fixed;
   border-radius: 0.5rem;
+  z-index: 99;
 `;
 export const SeletFreindTitle = styled.div`
   padding: 2rem 2rem 1rem;
@@ -17,7 +18,7 @@ export const SeletFreindTitle = styled.div`
     line-height: 1;
   }
   > span {
-    color: ${(props) => props.theme.placeholder};
+    color: ${(props) => props.theme.grey};
     font-size: 1.2rem;
     line-height: 1;
     display: block;
@@ -54,6 +55,13 @@ export const SeletFreindItem = styled.label`
   > div {
     display: flex;
     align-items: center;
+    width: calc(100% - 3rem);
+  }
+  > div > p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 1;
   }
   > input {
     cursor: pointer;

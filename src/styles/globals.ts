@@ -131,7 +131,7 @@ body {
 }
 html,
 body {
-  color: ${(props) => props.theme.placeholder};
+  color: ${(props) => props.theme.grey};
   font-size: 62.5%;
   font-weight: 400;
   font-family: "pretendard", "sans-serif";
@@ -171,10 +171,11 @@ export const defaultTheme: DefaultTheme = {
   bgBlack6: '#232428',
   bgBlack7: '#111214',
   imgbg: '#D9D9D9',
-  placeholder: '#888',
+  grey: '#888',
   btnHover: '#2F2F2F',
   border1e: '#1E1E1E',
   border25: '#252525',
+  border3F: '#3F4147',
   border949CF7: '#949CF7',
   fff: '#fff',
 };

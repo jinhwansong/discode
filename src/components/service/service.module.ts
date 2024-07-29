@@ -20,7 +20,7 @@ export const Find = styled.article`
     border-radius: 0.5rem;
     width: 100%;
     text-align: left;
-    color: ${(props) => props.theme.placeholder};
+    color: ${(props) => props.theme.grey};
     font-size: 1.2rem;
     height: 4rem;
     box-sizing: border-box;
@@ -49,7 +49,7 @@ const buttonStyles = css<{ $active: boolean }>`
   font-size: 1.2rem;
   padding-inline: 1rem;
   color: ${(props) =>
-    props.$active ? props.theme.fff : props.theme.placeholder};
+    props.$active ? props.theme.fff : props.theme.grey};
 `;
 const LinkToButton = css<{ $active: boolean }>`
   display: flex;
@@ -70,6 +70,13 @@ export const Dmlist = styled.div<{ $active: boolean }>`
     align-items: center;
     ${buttonStyles};
     width: 100%;
+    > p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1;
+      padding-right: 3rem;
+    }
   }
   > button {
     position: absolute;
@@ -89,7 +96,7 @@ export const Links = styled(Link)<{ $active: boolean }>`
   height: 5rem;
 
   > svg {
-    fill: ${(props) => props.$active ? props.theme.fff : props.theme.placeholder};
+    fill: ${(props) => props.$active ? props.theme.fff : props.theme.grey};
     margin-right: 0.8rem;
   }
 `;
@@ -100,13 +107,13 @@ export const DmTitle = styled.div`
   margin-inline: 1rem;
   position: relative;
   > h4 {
-    color: ${(props) => props.theme.placeholder};
+    color: ${(props) => props.theme.grey};
     font-size: 1.2rem;
   }
 `;
 export const Popup = styled.div`
   > div {
-    top: 22rem;
+    top: 17rem;
     left: 30rem;
   }
 `;
