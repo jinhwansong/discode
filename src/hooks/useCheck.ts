@@ -8,7 +8,7 @@ export default function useCheck(initialvalues: IuseCheck[]) {
   const singlecheck = (id: number) => {
     setCheckbox(
       checkbox.map((item) =>
-        item.server_id === id ? { ...item, isChecked: !item.isChecked } : item
+        item.id === id ? { ...item, isChecked: !item.isChecked } : item
       )
     );
   };

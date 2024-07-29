@@ -1,23 +1,17 @@
 import { useCallback } from 'react';
+import { useParams } from 'react-router-dom';
 import { usePopup, useCheck } from '@/hooks';
 import Button from '../button';
 import DmImg from '../dmImg';
 import { friend } from '@/mocks/server';
 import * as St from './group.module';
 
-interface IGroup {
-  user?: {
-    server_id: number;
-    profile: string;
-    name: string;
-  };
-}
-
-const Group = ({ user }: IGroup) => {
+const Group = () => {
   const { popupRef } = usePopup();
+  const param = useParams();
   // 친구 선택하기
   const [checkbox, singlecheck] = useCheck(
-    friend.filter((users) => users.server_id !== user?.server_id)
+    friend.filter((users) => users.id !== Number(param.id))
   );
   // 9명 미만으로 막기
   const remain = checkbox.filter(
@@ -27,7 +21,7 @@ const Group = ({ user }: IGroup) => {
     (id: number) => {
       if (
         remain >= 9 &&
-        !checkbox.find((item) => item.server_id === id && item.isChecked)
+        !checkbox.find((item) => item.id === id && item.isChecked)
       ) {
         return;
       }
@@ -46,20 +40,20 @@ const Group = ({ user }: IGroup) => {
       </St.SeletFreindTitle>
       <St.SeletFreindList>
         {checkbox.map((links, i) => (
-          <St.SeletFreindItem htmlFor={String(links.server_id)} key={i}>
+          <St.SeletFreindItem htmlFor={String(links.id)} key={i}>
             <div>
               <DmImg
-                id={links.server_id}
-                profile={links.profile}
+                profile={links.profileImage}
                 name={links.name}
+                online={links.user_state}
               />
-              {links.name}
+              <p>{links.name}</p>
             </div>
             <input
               checked={links.isChecked}
-              onChange={() => changeCheck(links.server_id)}
+              onChange={() => changeCheck(links.id)}
               type="checkbox"
-              id={String(links.server_id)}
+              id={String(links.id)}
             />
           </St.SeletFreindItem>
         ))}

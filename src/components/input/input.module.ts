@@ -11,6 +11,6 @@ export const Input = styled.input`
   border: none;
   padding-inline: 1rem;
   &::placeholder {
-    color: ${(props) => props.theme.placeholder};
+    color: ${(props) => props.theme.grey};
   }
 `;
