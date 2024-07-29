@@ -4,8 +4,8 @@ import { Dm, Friend, Login, Register, Server, Store } from './pages';
 
 const Router = createBrowserRouter([
   {
-   path: '/service/friend',
-        element: <Friend />,
+     path: '/service/friend',
+     element: <Friend />,
   },
   {
     path: '/register',
