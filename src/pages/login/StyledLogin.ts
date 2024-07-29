@@ -10,6 +10,7 @@ const StAppContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  flex: 1;
 `;
 
 const StWelcomeMsg = styled.div`
