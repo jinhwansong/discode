@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const StAppContainer = styled.div`
   display: flex;
@@ -10,65 +10,22 @@ const StAppContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-`
-
-const StMainContainer = styled.div`
-  border: 1px solid #444444;
-  border-radius: 8px;
-  width: 750px;
-  height: 400px;
-  background-color:#444444
-`
+`;
 
 const StWelcomeMsg = styled.div`
-  margin-bottom:20px;
+  margin-bottom: 20px;
   color: white;
-  text-align: center
-`
-
-const StInputContainer = styled.div`
-  margin-left : 50px;
-
-`
-
-const StInput = styled.input`
-  border: 1px solid white;
-  border-radius: 4px;
-  width: 630px;
-  height: 30px;
-`
-
-const StIdPwMsg = styled.p`
-  color:white;
-  font-size:13px;
-  font-weight: bold;
-  display:flex;
-  margin:0px
-`
-
-const StLoginButton = styled.button`
-border: 1px solid #B0C4DE;
-  margin-left:50px;
-  border-radius: 4px;
-  width: 636px;
-  height: 35px;
-  margin-top:36px;
-  background-color:#B0C4DE
-`
+  text-align: center;
+`;
 
 const StLinkSignUp = styled.p`
-  color:white;
-  font-size:12px;
-  margin-left:50px;
-`
+  color: white;
+  font-size: 12px;
+`;
 
 const StLink = styled(Link)`
-  color: #B0C4DE;
+  color: #b0c4de;
   text-decoration-line: none;
-`
+`;
 
-const StStar = styled.p`
-  color:red;
-`
-
-export { StAppContainer, StMainContainer, StWelcomeMsg, StInputContainer, StInput, StIdPwMsg, StLoginButton, StLinkSignUp, StLink, StStar }
+export { StAppContainer, StWelcomeMsg, StLinkSignUp, StLink };
