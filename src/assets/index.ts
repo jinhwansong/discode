@@ -1,0 +1,14 @@
+export { default as IcHeadPhone } from './headphone.svg?react';
+export { default as IcHeadphoneMute } from './headphoneMute.svg?react';
+export { default as IcMicMute } from './micMute.svg?react';
+export { default as IcMicOn } from './micOn.svg?react';
+export { default as IcSetting } from './setting.svg?react';
+export { default as IcCreateServer } from './createServer.svg?react';
+export { default as IcClosepop } from './closepop.svg?react';
+export { default as IcImgInput } from './imgInput.svg?react';
+export { default as IcCart } from './cart.svg?react';
+export { default as IcPeople } from './people.svg?react';
+export { default as IcPlus } from './plus.svg?react';
+export { default as IcCheck } from './check.png';
+export { default as IcAddfriend } from './addfriend.svg?react';
+export { default as IcCall } from './call.svg?react';
